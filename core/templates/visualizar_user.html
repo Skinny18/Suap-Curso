@@ -1,0 +1,22 @@
+{% csrf_token %}
+<div class="container">
+    <a href="{% url 'form' %}" >Adicionar Usuário</a>
+    {% for user in users %}
+        <ul>
+
+            <form action="{% url 'delete_user' user_id=user.id %}" method="post">
+                {% csrf_token %}
+
+                <li>
+
+                    {{ user.name }}
+                </li>
+
+                    <button name="delete" type="submit">Deletar</button>
+
+                </form>
+        </ul>
+    {% endfor %}
+</form>
+
+</div>

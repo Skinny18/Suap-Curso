@@ -4,7 +4,10 @@ from core import views
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('form/', views.get_name)   
+    path('form', views.get_name, name='form'),  
+    path('view', views.view_name, name='view'), 
+    path('delete_user/<int:user_id>', views.delete_user, name='delete_user')
+
 ]
 
 
